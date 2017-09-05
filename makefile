@@ -1,5 +1,7 @@
 IDIR =include
 ODIR =obj
+SDIR =source
+
 CC = gcc
 CFLAGS = -I$(IDIR)
 
