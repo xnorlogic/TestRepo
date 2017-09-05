@@ -1,9 +1,15 @@
+IDIR =include
+ODIR =obj
 CC = gcc
-CFLAGS = -I.
-DEPS = myinclude.h
-OBJ = myinclude.o shell.o
+CFLAGS = -I$(IDIR)
 
-%.o: %.c $(DEPS)
+_DEPS = myinclude.h
+_OBJ = myinclude.o shell.o
+
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 ShellEXE: $(OBJ)
