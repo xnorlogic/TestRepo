@@ -1,4 +1,5 @@
 CC = gcc
 CFLAGS = -I.
-Testsource: Testsource.o
-	$(CC) -o Testsource Testsource.o -I.
+DEPS = 
+ShellEXE: shell.o myinclude.o
+	$(CC) -o ShellEXE shell.o myinclude.o -I.
