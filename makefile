@@ -1,5 +1,10 @@
 CC = gcc
 CFLAGS = -I.
-DEPS = 
-ShellEXE: shell.o myinclude.o
-	$(CC) -o ShellEXE shell.o myinclude.o -I.
+DEPS = myinclude.h
+OBJ = myinclude.o shell.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+ShellEXE: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
