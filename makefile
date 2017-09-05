@@ -1,2 +1,4 @@
-Testsource: Testsource.c
-	gcc -o Testsource Testsource.c -I.
+CC = gcc
+CFLAGS = -I.
+Testsource: Testsource.o
+	$(CC) -o Testsource Testsource.o -I.
