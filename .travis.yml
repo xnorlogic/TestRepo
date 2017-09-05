@@ -1,0 +1,5 @@
+language: c
+compiler: gcc
+hellomake: Testsource.c
+     gcc -o hellomake Testsource.c -I.
+script: hellomake
